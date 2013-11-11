@@ -88,6 +88,10 @@ Cache::config('default', array('engine' => 'File'));
  *
  * ));
  */
+ 
+ Inflector::rules('plural', array('irregular' => array('asignacion' => 'asignaciones')));
+ 
+ 
 Configure::write('Dispatcher.filters', array(
 	'AssetDispatcher',
 	'CacheDispatcher'
