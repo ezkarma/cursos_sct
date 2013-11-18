@@ -23,11 +23,8 @@ class EmpleadosController extends AppController {
 	}
 	
 	 function visualizar(){
-	 
-	$this->set('empleados', $this->Empleado->find('all'));
- 	
-		
-	}
+		$this->set('empleados', $this->Empleado->find('all'));
+ 	}
 }
 
 ?>

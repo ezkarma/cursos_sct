@@ -103,6 +103,7 @@
 	
  <ul id="nav">
       <li class="home"><a href="/">Home</a></li>
+	  <li class="tutorials"><a href="/empleados/perfil">Mi perfil</a>  </li>
       <li class="tutorials"><a href="/cursos">Cursos</a>  </li>
            
       <li class="about"><a href="/empleados">Empleados</a></li>
