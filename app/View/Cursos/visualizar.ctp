@@ -18,7 +18,7 @@ echo  '<td>'.$curso['Curso']['ponente'].'</td>';
 echo  '<td>'.$curso['Curso']['cupo'].'</td>';
 echo  '<td>'.$curso['Curso']['fecha'].'</td>';
 echo  '<td>'.$curso['Curso']['horario'].'</td>';
-echo '<td>Inscribirse</td>';
+echo '<td>'.$this->Html->link('Inscribirse',array('controller' => 'Asignaciones', 'action' => 'agregar',$curso['Curso']['id'])).'</td>';
 echo '</tr>';
 }
 

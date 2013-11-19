@@ -11,9 +11,9 @@ class Asignacion extends AppModel {
             'className' => 'Curso',
             'foreignKey' => 'curso_id'
         ),
-		 'Empleado' => array(
-            'className' => 'Empleado',
-            'foreignKey' => 'empleado_id'
+		 'User' => array(
+            'className' => 'User',
+            'foreignKey' => 'user_id'
         )
     );
 	

@@ -1,35 +1,42 @@
 <?php
 
 class AsignacionesController extends AppController {
-    
+
+   
 	function index(){
 
 	}
 	
-	 function agregar(){
+	 function agregar($id){
 	 
-	//$this->set('carreras', $this->Generacion->Carrera->find('list'));
- 	$this->set('cursos', $this->Asignacion->Curso->find('list'));
-	$this->set('empleados', $this->Asignacion->Empleado->find('list'));
- 	
-	$this->set('emps', $this->Asignacion->Empleado->find('all'));
-		
-		if($this->request->is('post')){
-			
-		if ($this->Curso->save($this->request->data)) {
+	 $this->set('curso_id', $id);
+	$this->set('usuario_registrado', $this->Auth->user());
+	
+	if ($this->Asignacion->save($this->request->data)) {
 						
-				$this->Session->setFlash('Se ha Guardado el Curso Exitosamente');
-				$this->redirect(array('action'=>'agregar'));
+				$this->Session->setFlash('Se ha inscrito al Curso Exitosamente');
+				$this->redirect(array('controller'=>'Cursos','action'=>'visualizar'));
 			}
 		
-		}
+	
 	}
 	
 	 function visualizar(){
-	 
-	$this->set('cursos', $this->Curso->find('all'));
- 	
+		$this->set('cursos', $this->Curso->find('all'));
+ 	}
+	
+	function inscrito(){
+	
+		$inscrito = $this->Asignacion->find('all', array('conditions' => array('Asignacion.user_id' => $this->Session->read('Auth.User.id'))));
 		
+		//$inscrito = $this->Asignacion->Curso->find('all', array('conditions' => array('Curso.id' =>1)));
+		//$inscrito = $this->Asignacion->Curso->find('all', array('conditions' => array('Curso.id' =>1)));
+		
+		//$inscrito = $this->Asignacion->Curso->find('list');
+		
+		
+		
+		$this->set('cursos_inscritos', $inscrito);
 	}
 }
 

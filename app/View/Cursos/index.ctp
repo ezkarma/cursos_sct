@@ -6,6 +6,7 @@ echo $this->Html->link('Visualizar Cursos',array('controller' => 'Cursos', 'acti
 echo '<br>';
 echo $this->Html->link('Agregar Curso',array('controller' => 'Cursos', 'action' => 'agregar'));
 echo '<br>';
+
 echo $this->Html->link('Asignar Empleados a un Curso',array('controller' => 'Asignaciones', 'action' => 'agregar'));
 
 

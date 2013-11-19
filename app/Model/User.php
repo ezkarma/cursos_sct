@@ -11,7 +11,7 @@ class User extends AppModel {
 	public $hasMany = array(
         'Asignacion' => array(
             'className'    => 'Asignacion',
-            'foreignKey'    => 'empleado_id'
+            'foreignKey'    => 'user_id'
          )
 	);
 	

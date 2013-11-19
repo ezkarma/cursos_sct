@@ -104,13 +104,25 @@
  <ul id="nav">
       <li class="home"><a href="/">Home</a></li>
 	  
+	  
 	 <?php
+	 
+	$user = $this->Session->read('Auth.User.rol'); 
+
 	if ($this->Session->read('Auth.User')){
-	echo '<li class="tutorials"><a href="/users/perfil">Mi perfil</a>  </li>
-			<li class="tutorials"><a href="/cursos">Cursos</a>  </li>
-			<li class="about"><a href="/users">Empleados</a></li>
-			<li class="news"><a href="#">Capacitadores</a></li>
-			<li class="about"><a href="/users/logout">Salir</a></li>';
+	if($user == 'empleado'){
+	echo 		'<li class="tutorials"><a href="/users/perfil">Mi perfil</a>  </li>
+					<li class="tutorials"><a href="/cursos/visualizar">Cursos</a>  </li>
+					<li class="about"><a href="/users/logout">Salir</a></li>';
+	}
+	else{
+	echo 		'<li class="tutorials"><a href="/users/perfil">Mi perfil</a>  </li>
+					<li class="tutorials"><a href="/cursos/">Cursos</a>  </li>
+					<li class="about"><a href="/users">Empleados</a></li>
+					<li class="news"><a href="#">Capacitadores</a></li>
+					<li class="about"><a href="/users/logout">Salir</a></li>';
+	
+	}
 	}
 	else{
 	echo '<li class="about"><a href="/users/login">Ingresar</a></li>';

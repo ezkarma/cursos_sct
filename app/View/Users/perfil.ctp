@@ -19,5 +19,11 @@ $horas_restantes = $horas_cursos-$usuario_registrado['horas_totales'];
 	else {
 	echo 'Usted a cumplido con todas sus horas';
 	} 
+	
+	echo '<br><br>';
+	
+	echo $this->Html->link('Cursos en los que estoy inscrito',array('controller' => 'Asignaciones', 'action' => 'inscrito'));
+	echo '<br><br>';
+	echo $this->Html->link('Cursos Tomados',array('controller' => 'Cursos', 'action' => 'agregar'));
 ?>
 </h4>
