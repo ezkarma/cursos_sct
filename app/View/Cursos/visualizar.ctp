@@ -9,6 +9,7 @@ echo '<th>Ponente</th>';
 echo '<th>Cupo</th>';
 echo '<th>Fecha</th>';
 echo '<th>Horario</th>';
+echo '<th></th>';
 foreach($cursos as $curso){
 echo '<tr>';
 echo '<td>'.$curso['Curso']['nombre'].'</td>';
@@ -17,6 +18,7 @@ echo  '<td>'.$curso['Curso']['ponente'].'</td>';
 echo  '<td>'.$curso['Curso']['cupo'].'</td>';
 echo  '<td>'.$curso['Curso']['fecha'].'</td>';
 echo  '<td>'.$curso['Curso']['horario'].'</td>';
+echo '<td>Inscribirse</td>';
 echo '</tr>';
 }
 

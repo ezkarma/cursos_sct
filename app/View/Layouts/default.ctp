@@ -103,11 +103,19 @@
 	
  <ul id="nav">
       <li class="home"><a href="/">Home</a></li>
-	  <li class="tutorials"><a href="/empleados/perfil">Mi perfil</a>  </li>
-      <li class="tutorials"><a href="/cursos">Cursos</a>  </li>
-           
-      <li class="about"><a href="/empleados">Empleados</a></li>
-      <li class="news"><a href="#">Capacitadores</a></li>
+	  
+	 <?php
+	if ($this->Session->read('Auth.User')){
+	echo '<li class="tutorials"><a href="/users/perfil">Mi perfil</a>  </li>
+			<li class="tutorials"><a href="/cursos">Cursos</a>  </li>
+			<li class="about"><a href="/users">Empleados</a></li>
+			<li class="news"><a href="#">Capacitadores</a></li>
+			<li class="about"><a href="/users/logout">Salir</a></li>';
+	}
+	else{
+	echo '<li class="about"><a href="/users/login">Ingresar</a></li>';
+	}
+	?>
         
     </ul><!-- nav --> 
 
